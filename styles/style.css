@@ -1,0 +1,420 @@
+/* Google-inspired color variables */
+:root {
+    --google-blue: #4285F4;
+    --google-red: #EA4335;
+    --google-yellow: #FBBC05;
+    --google-green: #34A853;
+    --background: #f9f9f9;
+    --text: #202124;
+    --card-bg: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+
+
+@media (min-width: 1024px) {
+    .main-content {
+        max-width: 600px;
+        margin: 0 auto; /* Center content */
+    }
+}
+
+
+/* General styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* App title styling */
+.app-title {
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 0;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+}
+
+.emoji-pop {
+    display: inline-block;
+    animation: pop 0.5s ease-in-out;
+    margin-right: 10px;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.creator-text {
+    color: #0c76f8;
+    font-size: 5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.app-description {
+    color: #5f6368;
+    font-size: 1rem;
+    margin-top: 0;
+    font-style: italic;
+}
+
+/* Google-inspired logo */
+.google-logo {
+    font-family: 'Product Sans', 'Arial', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: right;
+    margin-top: 5px;
+    margin-right: 200px;
+}
+
+/* Fancy divider */
+.fancy-divider {
+    background: linear-gradient(to right, var(--google-blue), var(--google-red), var(--google-yellow), var(--google-green));
+    border: none;
+    margin: 0;
+    border-radius: 2px;
+}
+
+/* Sidebar styling */
+.sidebar-header {
+    padding: 10px 0;
+    border-bottom: 2px solid var(--google-blue);
+    margin-bottom: 20px;
+}
+
+.sidebar-header h2 {
+    color: var(--google-blue);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 2.5rem;
+}
+
+.selected-category {
+    background-color: rgba(66, 133, 244, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid var(--google-blue);
+}
+
+.selected-category h3 {
+    color: var(--google-blue);
+    margin: 0;
+    font-weight: 500;
+    
+}
+
+.sidebar-footer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    padding: 10px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--shadow);
+    text-align: center;
+    font-size: 0.8rem;
+    color: #5f6368;
+}
+
+/* Converter styling */
+.converter-header {
+    background-color: var(--card-bg);
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px var(--shadow);
+    margin-bottom: 5px;
+    border-left: 5px solid var(--google-green);
+}
+
+.converter-header h2 {
+    margin: 0;
+    color: var(--google-green);
+    font-weight: 500;
+}
+
+.unit-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px var(--shadow);
+    transition: all 0.3s ease;
+    height: 100%;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    padding: 15px;
+    
+}
+
+.unit-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.source-unit {
+    border-top: 5px solid var(--google-blue);
+}
+
+.target-unit {
+    border-top: 5px solid var(--google-red);
+}
+
+.unit-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: #5f6368;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.result-container {
+    background-color: rgba(52, 168, 83, 0.1);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-left: 4px solid var(--google-green);
+    animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--google-green);
+    text-align: center;
+}
+
+.conversion-hint {
+    background-color: rgba(251, 188, 5, 0.1);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 20px 0;
+    border-left: 4px solid var(--google-yellow);
+    animation: slide-in 0.5s ease-in-out;
+}
+
+@keyframes slide-in {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.formula-box {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow);
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 4px solid var(--google-blue);
+    max-width: 600px;
+    padding: 15px;
+}
+
+.formula-label {
+    font-weight: 500;
+    color: var(--google-blue);
+}
+
+.formula-value {
+    font-family: 'Courier New', monospace;
+}
+
+
+/* Temperature references */
+ .temperature-ref {
+    background-color: rgba(66, 133, 244, 0.05);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.temperature-highlight {
+    background-color: rgba(251, 188, 5, 0.2);
+    border: 1px solid var(--google-yellow);
+}
+
+.ref-name {
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.ref-value {
+    color: var(--google-blue);
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+} 
+
+
+input[type="number"] {
+    font-size: 2rem !important; /* Adjust size */
+    padding: 10px !important; /* Increase padding */
+}
+
+input[type="string"] {
+    font-size: 2rem !important; /* Adjust size */
+    padding: 10px !important; /* Increase padding */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .app-title {
+        font-size: 2rem;
+    }
+    
+    .google-logo {
+        font-size: 2rem;
+        text-align: center;
+        margin-top: 5px;
+    }
+    
+    .unit-card {
+        margin-bottom: 15px;
+    }
+    
+    .sidebar-footer {
+        position: static;
+        margin-top: 20px;
+        width: 100%;
+    }
+    
+    .result-value {
+        font-size: 1.2rem;
+    }
+}
+
+/* Animations */
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.pulse {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Gradient text effect */
+.gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Dark mode toggle */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--card-bg);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px var(--shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.dark-mode-toggle:hover {
+    transform: rotate(30deg);
+}
+
+
+
+
+
+
+
+
+
+
+/* Comparison section
+.comparison-section {
+    background-color: var(--card-bg);
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px var(--shadow);
+    margin: 20px 0;
+    animation: fade-in 0.5s ease-in-out;
+    border-left: 5px solid var(--google-blue);
+}
+
+.comparison-section h4 {
+    color: var(--google-blue);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.comparison-item {
+    background-color: rgba(66, 133, 244, 0.05);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--google-blue);
+    transition: all 0.2s ease;
+}
+
+.comparison-item:hover {
+    background-color: rgba(66, 133, 244, 0.1);
+    transform: translateX(2px);
+}
+
+.comparison-item-small {
+    background-color: rgba(66, 133, 244, 0.05);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.comparison-item-small:hover {
+    background-color: rgba(66, 133, 244, 0.1);
+    transform: translateY(-2px);
+}
+
+.comparison-name {
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 5px;
+}
+
+.comparison-value {
+    color: var(--google-blue);
+    font-family: 'Courier New', monospace;
+}
